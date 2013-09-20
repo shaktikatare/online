@@ -1,0 +1,22 @@
+<body style="background-color:#eeeeee">
+<h1 style="width:650px; margin:0 auto;">Wellcome to Online Shopping</h1>
+
+<div style="width:500px; margin:0 auto;">
+  <h4>Login page</h4>
+  <p><%= form_for(@user, :url => check_login_users_path) do |f|%>
+    <lable>Email</lable>
+    </br>
+    <%= f.text_field :email%>
+    </br>
+    <lable>password</lable>
+    </br>
+    <%= f.password_field :encrypted_password%>
+    </br>
+    <%=f.submit "login"%>
+  <%end%>
+  </p>
+  <p><%= link_to "new user signup", signup_users_path %></p>
+</div>
+
+
+</body>

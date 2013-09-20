@@ -1,0 +1,42 @@
+<body style="background-color:#eeeeee">
+<h1 style="width:650px; margin:0 auto;">Wellcome to Online Shopping</h1>
+<div style="width:500px; margin:0 auto;">
+  <h4>Update Form</h4>
+  <%= form_for(@user, :url => update_profile_users_path) do |f|%>
+    <%= f.hidden_field :id, :value =>@current_user.id%>
+    <lable>First Name</lable>
+    </br>
+    <%= f.text_field :first_name, :value =>@current_user.first_name%>
+    </br>
+    <label> Last Name </label>
+    <br/>
+    <%= f.text_field :last_name, :value =>@current_user.last_name %>
+    <br/>
+    <label> Email </label>
+    <br/>
+    <%= f.text_field :email, :value =>@current_user.email %>
+    <br/>
+    <label> Phone no. </label>
+    <br/>
+    <%= f.text_field :phone, :value =>@current_user.phone %>
+    <br/>
+    <label> country </label>
+    <br/>
+    <%= f.text_field :country, :value =>@current_user.country %>
+    <br/>
+    <label> state </label>
+    <br/>
+    <%= f.text_field :state, :value =>@current_user.state %>
+    <br/>
+    <label> city </label>
+    <br/>
+    <%= f.text_field :city, :value =>@current_user.city %>
+    <br/>
+    <%= f.hidden_field :is_admin, :value =>"false"%>
+    <%= f.submit "update" %>
+  <%end%>
+<%= link_to "Back",home_users_path%>
+      
+  
+</div>
+</body>
