@@ -1,8 +1,8 @@
 <body style="background-color:#eeeeee">
-<h1 style="width:650px; margin:0 auto;">Wellcome to Online Shopping</h1>
-<div style="width:500px; margin:0 auto;">
-  <h4>Signup Form</h4>
-  <%= form_for(@user, :onsubmit =>"return validateForm()", :name =>"myForm") do |f| %>
+  <h1 style="width:650px; margin:0 auto;">Wellcome to Online Shopping</h1>
+  <div style="width:500px; margin:0 auto;">
+    <h4>Signup Form</h4>
+    <%= form_for(@user, :onsubmit =>"return validateForm()", :name =>"myForm") do |f| %>
     <label> First Name </label>
     <br/>
     <%= f.text_field :first_name %>
@@ -37,9 +37,8 @@
     <br/>
     <%= f.hidden_field :is_admin, :value =>"false"%>
     <%= f.submit "Signup" %>
-    
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </body>
 <script>
 function validateForm()

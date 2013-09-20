@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-   before_filter :authenticate_user, :only => [:home,:edit_profile]
-   def initialize_user
+  before_filter :authenticate_user, :only => [:home,:edit_profile]
+  def initialize_user
     @user = User.new
   end
   def login
-  initialize_user
+    initialize_user
   end
   def signup
     initialize_user
   end
   def home
-   
   end
   def create
     params[:user][:encrypted_password] =Digest::SHA1.hexdigest(params[:user][:encrypted_password])
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
       initialize_user
       flash[:notice] = "Logged in failed"
       render :login
-      end 
+    end 
   end
   def authenticate_user
     if session[:user_id].present?
@@ -43,16 +42,16 @@ class UsersController < ApplicationController
     end
   end
   def logout
-  session[:user_id]=nil
-  redirect_to root_path
+    session[:user_id]=nil
+    redirect_to root_path
   end
   def edit_profile
-  initialize_user
+    initialize_user
   end
   def update_profile
-     @user = User.find(params[:user][:id])
-     if @user.update_attributes(params[:user])
-     redirect_to home_users_path
-     end
+    @user = User.find(params[:user][:id])
+    if @user.update_attributes(params[:user])
+    redirect_to home_users_path
+    end
   end
 end

@@ -1,9 +1,9 @@
 <body style="background-color:#eeeeee">
-<div align="right">
-<h4 align="right">wellcome <%=@current_user.first_name%></h4>
-<%= link_to "edit profile",edit_profile_users_path%>
-</br>
-<%= link_to "logout", logout_users_path%>
-</div>
-<p><%= flash[:notice] %></p>
+  <div align="right">
+    <h4 align="right">wellcome <%=@current_user.first_name%></h4>
+    <%= link_to "edit profile",edit_profile_users_path%>
+    </br>
+    <%= link_to "logout", logout_users_path%>
+  </div>
+  <p><%= flash[:notice] %></p>
 </body>
